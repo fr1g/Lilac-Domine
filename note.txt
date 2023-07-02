@@ -1,0 +1,56 @@
+备忘录.嗯.
+录入可出售域名记录时候, domain_name使用格式:.cn#域名简介
+同时, status=1
+只录入: domain_name, price, info, status
+
+
+数据库domain表有关问题解决方法：
+    搜索属于某个用户的域名（包括计数）：条件：联表查询三表，用户的、域名状态为2的、交易类型为buy的 done
+    当该域名过期：将域名状态改为1 添加交易记录：remove，寻找第一次购买记录并将其改为exipre_buy done
+    搜索过期的域名：条件：选择全部且exipre<now done
+    若用户再次购买该域名：添加交易记录：buy，域名状态改为2 done_default
+    若其他用户购买该域名：添加交易记录：buy... done_default
+    在用户切换自动续费时候，为域名加减#符号。
+
+    ！：是否renew以及如何调用方法：在前端拿到当前页面的列表时，展示的时候将所有#删除
+    判断是否为autorenew（ar）只使用前端拿到的内容。
+    前端：开启ar：请求/query/auto/ 发送：domain_id&{on/off}
+    后端：获取到内容然后parse，确认domain所有权，获取id对应domain_name，
+    「on：删除所有的#，然后添加#在尾部；off：删除所有的#」也就是说后端不判断具体状态
+
+
+
+录入已购买域名记录时候, 需要录入:
+具体的域名(actions.cn),
+expire_time,
+info,
+...
+
+special task: 制作javaweb2专版：
+    直接使用javaee工程修改
+    移除一切spring和mybatis相关后端
+    改为老实现模式的后端
+    前端的路由功能：探查是否有原生的tomcat路由，否则作废。
+        若有：
+            重新制作路由映射
+        否则：
+            使用此路径模式：
+                "Protocol://Hostname:Port/index.jsp#router?param=value"
+
+页面功能: 页面区分:
+1. index.jsp: 主页 设计: index.html
+2. lar.jsp: 登录与注册
+3: 放弃
+4. panel.jsp: 用户管理面板 if管理员: 额外的管理界面.
+5. market.jsp: 商店页面 !添加：购买弹窗（Component），业务逻辑在此。
+6. about.jsp: 关于页面
+7. 因时间不足放弃 对应位置显示为：工单系统维护中，请向我们发送邮件  //ticket.jsp*: 工单系统(发送. 管理员在管理面板回复. 可选. 不录入数据库. 备注原因.)
+
+已完成: (#: 设计已完成, @: 迁移已完成, &: 功能已完成)
+1: #@&
+2: #@
+3: ---
+4: WIP
+5: WIP
+6: #@&
+7: ---

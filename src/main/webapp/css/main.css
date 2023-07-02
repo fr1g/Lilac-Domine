@@ -1,0 +1,219 @@
+:root{
+    --move-of-list: 1.5em;
+}
+
+*{
+    user-select: auto;
+    /*selection color...*/
+    
+}
+.vela{
+    vertical-align:middle;
+}
+.vela::before{
+    content:'';
+    width:0;
+    height:100%;
+    display:inline-block;
+    position:relative;
+    vertical-align:middle;
+    background: transparent;
+}
+.unselect{
+    user-select: none !important;
+}
+
+@media(prefers-color-scheme: dark){
+    :root{
+        --swal-bgs: rgba(63, 62, 62, 0.9759);
+    }
+    .swal-modal{
+        background-color: var(--swal-bgs) !important;
+    }
+    .swal-modal>*{
+        color: whitesmoke;
+    }
+    .swal-icon--success::after{
+        background-color: var(--swal-bgs) !important;
+    }
+    .swal-icon--success::before{
+        background-color: var(--swal-bgs) !important;
+    }
+    .swal-icon--success__hide-corners{
+        background-color: var(--swal-bgs) !important;
+    }
+}
+
+.price::before{
+    content: '$ ';
+    color: salmon;
+    font-weight: bold;
+}
+.price-f::before{
+    content: '$ ';
+    color: salmon;
+    font-weight: bold;
+}
+.price::after{
+    content: ' /mo.';
+    font-size: smaller;
+    color: darksalmon;
+}
+.inners{
+    pointer-events: none;
+}
+.elop{
+    animation: owr 12s linear infinite;
+    
+}
+@keyframes owr {
+    0%{transform: translateX(0%);}
+    30%{transform: translateX(0%);}
+    /* 50%{transform: translateX(-60%);} */
+    /* 70%{ transform: translateX(-120%);} */
+    100%{ transform: translateX(-120%);}
+}
+@media(max-width: 1023px){
+    :root{
+        --move-of-list: 1.14514rem;
+    }
+    .inners{
+        /* animation: owr 12s linear infinite; */
+        overflow: hidden;
+        font-size: medium !important;
+        border: none !important;
+    }
+    .lmn{
+        margin-top: .5rem;
+        overflow: hidden;
+        border: none !important;
+
+    }
+    .texttoright{
+        font-weight: bolder !important;
+
+    }
+    .texttoright::after{
+        content: '↓';
+        font-size: small;
+        /* mix-blend-mode: difference; */
+        filter: invert(5%);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    :root{
+        --move-of-list: 1.919810vw;
+    }
+    .texttoright{
+        animation: tor .810s cubic-bezier(0.075, 0.82, 0.165, 1);
+        /* transform: translateX(160%); */
+        transform: translateX(var(--move-of-list));
+        
+        /* text-align: right;  display: block; */
+        /* right: 0px; */
+    }
+    .lgmin {
+        min-height: 83vh;
+    }
+    .texttoright::after{
+        content: ' →';
+        /* mix-blend-mode: difference; */
+        filter: invert(5%);
+    }
+
+}  
+.able::before{
+    content: " ● ";
+    font-weight: bold !important;
+    color: #6fe560e0;
+}
+
+.warn::before{
+    content: " ● ";
+    font-weight: bold !important;
+    color: #f7e438e3;
+}
+
+.danger::before{
+    content: " ● ";
+    font-weight: bold !important;
+    color: #ec362dd5;
+}
+
+
+
+.balance::before{
+    content: "$.";
+    /* color: rgb(255, 230, 227); */
+    font-weight: bold;
+
+}
+
+.kary{
+    color: #815b14;
+    background-color: #815b14;
+}
+
+.pcs::after{
+    content: ' pcs.';
+    font-size: small !important;
+    font-style: italic;
+}
+
+.tickets::after{
+    content: ' tks.';
+    font-size: small !important;
+    font-style: italic;
+}
+
+/* @keyframes tor {
+    0%{text-align: left;}
+    50%{text-align: center;}
+    100%{text-align: right;}
+} */
+/* @keyframes tor {
+    0%{right:unset;}
+    100%{right: 0px;}
+} */
+@keyframes tor {
+    0%{transform: translateX(0);}
+    100%{transform: translateX(var(--move-of-list));}
+}
+
+.inners{
+    pointer-events: none !important;
+}
+
+.owns::after{
+    content: " Ds.";
+}
+
+.divized-carousel-item{
+    min-height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.loader{
+    --col: rgba(238, 220, 59, 0.719);
+    --neg: #f3f3f3f3;
+    --arem: 3.3rem;
+    --brem: 0.5rem;
+    border:var(--brem) solid var(--col);
+    border-radius:50%;
+    border-right:var(--brem) solid var(--neg);
+    
+    width:var(--arem);
+    height:var(--arem);
+    /* animation-name:load; */
+    /* animation:load 2s linear infinite; */
+}
+
+/*bs refix*/
+
+.table-striped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,.05)}
+.table-hover tbody tr:hover{color:#212529;background-color:rgba(0,0,0,.075)}
+.table-dark.table-striped tbody tr:nth-of-type(odd){background-color:rgba(255,255,255,.05)}
+.table-dark.table-hover tbody tr:hover{color:#fff;background-color:rgba(255,255,255,.075)}
