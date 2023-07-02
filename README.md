@@ -4,9 +4,7 @@
 仓库中不附带说明书，请自己想办法。
 
 如果要将本项目再次作为课程设计提交，请*自己找出所有包含原作者的信息的项目并删除。* **注意，根据本项目的License（MIT），这个行为如若公开和或售卖即为侵权。请好自为之。**
-
-
-
+<br>本项目的实际贡献者：<a href="https://github.com/fr1g">Feiron Iguista</a> | <a href="https://github.com/GabrielxDuO">Gabriel Tenma</a>
 原仓库Commits：
 
 // 原仓库（现已转为private）的readme：
