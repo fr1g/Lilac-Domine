@@ -1,0 +1,1 @@
+console.log("%c Work colllllllllaborated by F.I. and G.T.", "border:1px solid gray; border-radius: 12px; color: #39C5BB;");
